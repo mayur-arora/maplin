@@ -5,7 +5,8 @@
 "description":"Analysing Maplin's Security Systems Placement",
 "browser_action": {
 "default_tile":"Security Systems Analysing Maplin",
-"default_popup":"/views/index.html"
+"default_popup":"/views/index.html",
+"default_icon":"/resources/images/icon.png"
 },
 "author":"Mayur Arora",
 "permissions":["http://www.maplin.co.uk/c/cctv-and-security"],
