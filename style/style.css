@@ -1,0 +1,68 @@
+.title
+{    
+    width:300px;
+    display: inline-block;
+    text-decoration: none;
+    color:inherit;
+}
+
+body
+{
+    min-width: 400px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.right
+{
+    float: right;
+}
+
+.hover:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.heading {
+    font-weight:bold;
+}
+
+
+#progressCategories
+{
+    float:right;
+}
+.invisible 
+{
+    display: none;
+}
+
+.details
+{
+    width:100px;
+    display:inline-block;
+    margin:15px;
+    
+}
+
+input[type='button'] {
+    border-radius: 5px;
+    margin:10px;
+}
+
+#products 
+{
+    display: none;
+}
+
+.pagination
+{
+    margin-left:10px;
+    font-weight: bolder;
+    
+}
+
+img 
+{
+    float: right;
+    margin-top:12px;
+}

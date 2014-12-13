@@ -1,0 +1,65 @@
+<!doctype html>
+<html>   
+    <head>
+    <meta lang="en" charset="utf-8">
+    <title>Analysing Maplin</title>
+        <link rel='stylesheet' href="/style/style.css" >
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <progress id='progressCategories'></progress>
+        <div id='products'>            
+        <span class="heading" >Products</span>
+        <span class="right heading" >Quantity</span>
+        <div id="divProducts" data-bind='foreach:products'>
+            <p>
+                <span class='title hover'  data-bind='text:title,event:{click:$parent.fetchBrands}'></span>
+                <span class='right' data-bind ='text:quantity'></span>                
+            </p>            
+        </div>
+            <div data-bind="css: {invisible:brands().length < 1} ">
+            
+               <span class='heading'>Leading Brands for</span> <span class='heading' data-bind='text:selectedCategory'></span>
+                <span class='heading right'>SKUs Available</span> 
+                <div data-bind='foreach:brands'>
+                    <p>
+                    <span data-bind='text:brandName'></span>  
+                        <span class='right' data-bind='text:quantity'></span>
+                        </p>
+                </div>
+                <progress class="invisible right" id='progressBrands' class="right"></progress>
+                <input  type='button' value="View SKUs" data-bind="event:{click:viewSKUs}" >
+                <span id='noProducts'></span>
+                <span data-bind="css:{invisible:productDetails().length < 1}"><input type='button' value='Sort by price' data-bind="event:{click:sortByPrice},enable:sortedByPrice() == 0" >
+                    <input type='button' value='Sort by name' data-bind="event:{click:sortByName},enable:sortedByName() == 0" >
+                    <span data-bind='foreach:pagination'>
+                    <span class='heading hover' data-bind='text:$index() + 1,event:{click:$parent.startPaging}'></span>
+                    </span>
+                    <img src="/resources/images/save.png" data-bind='event:{click:saveProductDetails}'>
+                </span>
+               
+                <div data-bind="css: {invisible:productDetails().length < 1}">
+                    <progress id='progressDetails' class='right invisible'></progress>
+                    <div data-bind='foreach:productDetails'>
+                        <p>
+                          <span class="heading">Name</span> <span data-bind='text:productName'></span>  
+                        </p>
+                        <p>
+                            <span class="heading">Price</span> <span data-bind='text:newPrice'></span>
+                        </p>
+                        <p>
+                            <span class="heading">SKU</span> <span data-bind='text:sku'></span>
+                        </p>
+                        <hr>
+                    </div>   
+                    
+                </div>
+        </div> 
+            </div>
+                 
+        <script src="/scripts/knockout.js"></script>
+        <script src="/scripts/jquery.js"></script>        
+        <script src='/scripts/crawler.js'></script>
+        <script src="/scripts/init.js"></script>
+    </body>
+</html>
